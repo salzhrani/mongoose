@@ -24,7 +24,7 @@ interface IUser {
 }
 
 // 2. Create a Schema corresponding to the document interface.
-const userSchema = new Schema<IUser>({
+const userSchema = new Schema<IUser, Model<IUser>>({
   name: { type: String, required: true },
   email: { type: String, required: true },
   avatar: String
@@ -72,7 +72,7 @@ const user: HydratedDocument<IUser> = new User({
 To define a property of type `ObjectId`, you should use `Types.ObjectId` in the TypeScript document interface. You should use `'ObjectId'` or `Schema.Types.ObjectId` in your schema definition.
 
 ```ts
-import { Schema, Types } from 'mongoose';
+import { Schema, Types, Model } from 'mongoose';
 
 // 1. Create an interface representing a document in MongoDB.
 interface IUser {
@@ -83,7 +83,7 @@ interface IUser {
 }
 
 // 2. Create a Schema corresponding to the document interface.
-const userSchema = new Schema<IUser>({
+const userSchema = new Schema<IUser, Model<IUser>>({
   name: { type: String, required: true },
   email: { type: String, required: true },
   // And `Schema.Types.ObjectId` in the schema definition.
