@@ -14,7 +14,7 @@ To get started with Mongoose in TypeScript, you need to:
 4. [Connect to MongoDB](/docs/connections.html).
 
 ```typescript
-import { Schema, model, connect } from 'mongoose';
+import { Schema, model, connect, Model } from 'mongoose';
 
 // 1. Create an interface representing a document in MongoDB.
 interface IUser {
